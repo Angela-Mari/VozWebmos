@@ -1,0 +1,38 @@
+
+.logo {
+    width: 200px;
+    height: 200px;
+    z-index: 2;
+    position: absolute;
+    left: 0px;
+    top: 20px;
+}
+
+.banner-image {
+    width: max-content;
+    height: 300px;
+    object-fit: cover;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    z-index: 1;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
+    .logo {
+        left: 0px;
+        top: 115px;
+    }
+
+    .banner-image {
+        top: 250px;
+        z-index: 1;
+    }
+}
+
+.my-container {
+    background-image: linear-gradient(to bottom, #400454, #8c14b4, black, #7e499b, black);
+    height: 1721px;
+
+}
