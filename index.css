@@ -1,38 +1,84 @@
+h1 {
+  font-family: "New Rocker", Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
 
 .logo {
-    width: 200px;
-    height: 200px;
-    z-index: 2;
-    position: absolute;
-    left: 0px;
-    top: 20px;
+    width: 175px;
+    height: 175px;
+    margin-top: 15px;
+}
+
+.title {
+    background-color: red;
+    margin-top:-175px;
+    margin-bottom:-100px;
+}
+
+.buttons {
+    margin-top:-175px;
+    background-color: blue;
 }
 
 .banner-image {
-    width: max-content;
-    height: 300px;
+    margin-top: 25px;
+    width: 800px;
+    height: 375px;
     object-fit: cover;
-    position: absolute;
-    left: 0px;
-    top: 100px;
-    z-index: 1;
+}
+
+.banner-text {
+   z-index: 1;
+   position: absolute;
+   left: 750px;
+   width: 400px;
+   margin-top: 100px;
+   height: fit-content;
+    background: linear-gradient(180.33deg, #C4AAC0 50%, rgba(157, 115, 151, 0) 100%);
+
+    padding-top: 15px;
+    padding-bottom: 50px;
+
+   h1 {
+    color: black;
+    text-align: center;
+   }
+
 }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
 
-    .logo {
-        left: 0px;
-        top: 115px;
-    }
-
-    .banner-image {
-        top: 250px;
-        z-index: 1;
-    }
+    /* need to add a buffer for iphone island dead space */
 }
 
 .my-container {
     background-image: linear-gradient(to bottom, #400454, #8c14b4, black, #7e499b, black);
     height: 1721px;
+
+}
+
+/* Chrome Button */
+
+.chrome-button {
+margin: 2px;
+background: linear-gradient(45deg, #D0D0D0 0%, #838383 25%, #BEBEBE 75%, #838383 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+border-radius: 25px;
+border-color: #FFFFFF #D0D0D0 #707070 #707070;
+color: white;
+width: 100px;
+height: 30px;
+
+
+}
+
+.chrome-div {
+width: fit-content;
+background: linear-gradient(180deg, #FFFFFF 0%, #707070 60%, #BEBEBE 99.99%);
+border-radius: 25px;
+margin: 10px;
+padding: 0px;
 
 }
