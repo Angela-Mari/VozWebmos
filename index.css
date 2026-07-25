@@ -49,15 +49,50 @@ h1 {
 
 }
 
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
 
     /* need to add a buffer for iphone island dead space */
+    .banner-image {
+        width: 500px;
+        height: 275px;
+    }
+
+    .banner-text {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-inline: auto; 
+        margin-top: 250px;
+    }
 }
 
-.my-container {
-    background-image: linear-gradient(to bottom, #400454, #8c14b4, black, #7e499b, black);
-    height: 1721px;
+@media screen and (max-width: 800px) {
+    .logo {
+        visibility: hidden;
+    }
 
+    .logo-mobile {
+        width: 175px;
+        height: 175px;
+        margin-top: -25px;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .logo-mobile {
+        display: none;
+    }
+}
+
+
+body {
+    background-image: url("./images/angela-tile.JPG");
+}
+
+.my-container {    
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(51, 21, 99, 0.5) 5%,rgba(51, 21, 99, 0.75) 15%, #000000 35%, #000000 65%, rgba(51, 21, 99, 0.75) 85%, rgba(51, 21, 99, 0.5) 95%, rgba(0, 0, 0, 0) 100%);
+    height: 100dvh;
 }
 
 /* Chrome Button */
