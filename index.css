@@ -5,6 +5,15 @@ h1 {
   color: white;
 }
 
+h2 {
+font-family: "New Rocker", Georgia, 'Times New Roman', Times, serif;
+  font-weight: 300;
+  font-size: 3rem;
+  font-style: normal;
+  color: white;
+  text-align: center;
+}
+
 
 .logo {
     width: 175px;
@@ -74,13 +83,9 @@ h1 {
         margin-top: -50px !important;
     }
 
-    .my-foot {
-        position: relative;
-        width: 100%;
-        bottom: 0px; 
-        left: 0;
-    }           
-    
+    .my-container {
+        min-height: 250vh;
+    }
 
 }
 
@@ -108,36 +113,34 @@ h1 {
 
 
 body {
-    background-image: url("./images/angela-tile.JPG");
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(51, 21, 99, 0.5) 5%,rgba(51, 21, 99, 0.75) 15%, #000000 35%, #000000 65%, rgba(51, 21, 99, 0.75) 85%, rgba(51, 21, 99, 0.5) 95%, rgba(0, 0, 0, 0) 100%), url("./images/angela-tile.JPG");
+    min-height: 100vh;
 }
 
-.my-container {    
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(51, 21, 99, 0.5) 5%,rgba(51, 21, 99, 0.75) 15%, #000000 35%, #000000 65%, rgba(51, 21, 99, 0.75) 85%, rgba(51, 21, 99, 0.5) 95%, rgba(0, 0, 0, 0) 100%);
-    min-height: 200vh;
-    margin-bottom: -25px;
-    padding-bottom: 25px;
+.my-container {
+    min-height: 120vh;
 }
 
 /* Chrome Button */
 
 .chrome-button {
-margin: 2px;
-background: linear-gradient(45deg, #D0D0D0 0%, #838383 25%, #BEBEBE 75%, #838383 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-border-radius: 25px;
-border-color: #FFFFFF #D0D0D0 #707070 #707070;
-color: white;
-width: 100px;
-height: 30px;
+    margin: 2px;
+    background: linear-gradient(45deg, #D0D0D0 0%, #838383 25%, #BEBEBE 75%, #838383 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    border-radius: 25px;
+    border-color: #FFFFFF #D0D0D0 #707070 #707070;
+    color: white;
+    width: 100px;
+    height: 30px;
 
 
 }
 
 .chrome-div {
-width: fit-content;
-background: linear-gradient(180deg, #FFFFFF 0%, #707070 60%, #BEBEBE 99.99%);
-border-radius: 25px;
-margin: 10px;
-padding: 0px;
+    width: fit-content;
+    background: linear-gradient(180deg, #FFFFFF 0%, #707070 60%, #BEBEBE 99.99%);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 0px;
 
 }
 
@@ -160,12 +163,12 @@ padding: 25px;
 
 .ipod-screen {
 
-width: 275px;
-height: 200px;
-background: #FFFFFF;
-border: 1px solid #000000;
-border-radius: 5px;
-margin-bottom: 15px;
+    width: 275px;
+    height: 200px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 15px;
 
 }
 
@@ -217,4 +220,26 @@ margin-bottom: 15px;
     background-color: black;
     margin-top: 25px;
     padding: 10px;
+}
+
+/* camcorder */
+
+.my-gif {
+    transform: skew(2deg, -2deg);
+    z-index: 1;
+    margin-top: 100px;
+    margin-left: 25px;
+    border: 5px solid black;
+    object-fit: cover;
+    width: 245px;
+    height: 175px;
+    border-radius: 5%;
+}
+
+.camcorder {
+    background-image: url("./images/camcorder.png");
+    background-size: cover;
+    background-position: center;
+    width: 452px;
+    height: 378px;
 }
