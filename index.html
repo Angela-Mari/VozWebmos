@@ -17,6 +17,7 @@
             function reportWindowSize() {
                 
                 const hero_row = document.querySelector('.hero');
+                const ipod_row = document.querySelector('.ipod-row')
 
                 window.innerWidth < 1200 ? hero_row.classList.add('justify-content-center') : hero_row.classList.remove('justify-content-center')
             }
@@ -33,7 +34,7 @@
                 <!-- Site Header -->
                     <div >
                         
-                                    <image src="./images/Logo Chrome-Silver.png" class="logo"/>
+                                    <img src="./images/Logo Chrome-Silver.png" class="logo"/>
                             
                                     <div style="position: absolute; 
                                                 left: 0; 
@@ -63,22 +64,88 @@
                                                        
                     </div>
                     <div class="row justify-content-center">
-                        <image src="./images/Logo Chrome-Silver.png" class="logo-mobile"/>
+                        <img src="./images/Logo Chrome-Silver.png" class="logo-mobile"/>
                      </div>
-                        <div class="row hero">
-                            <image src="./images/Secondary.jpg" class="banner-image"/>
-                            <div class="banner-text">
-                                <h1>
-                                    Hello Listener
-                                </h1>
-                                <p>
-                                    Welcome to Voz Memos. A podcast informed by growing up in the 2000s and coming of age “during unprecedented times.” I share bi-weekly episodes on topics ranging from my latest creative fixation to commentary on how AI is ruining everything. 
-                                </p>
+                    <div class="row hero">
+                        <img src="./images/Secondary.jpg" class="banner-image"/>
+                        <div class="banner-text">
+                            <h1>
+                                Hello Listener
+                            </h1>
+                            <p>
+                                Welcome to Voz Memos. A podcast informed by growing up in the 2000s and coming of age “during unprecedented times.” I share bi-weekly episodes on topics ranging from my latest creative fixation to commentary on how AI is ruining everything. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <div class="ipod-base col justify-content-center">
+                                <div class="row justify-content-center">
+                                    <div class="ipod-screen">
+                                        <div class="row">
+                                            <div class="col">
+                                                <img src="./images/Podcast Cover.jpg" width="120px" hight="120px" class="podcast-cover" alt="Voz Memos logo on purple rainbow background with Angela looking up at camera"/>
+                                            </div> 
+                                            <div class="ipod-text col">
+                                                <p>
+                                                    Epsiode Title
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-2">
+                                                <p class="ipod-time-text">
+                                                    00:00
+                                                </p>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="ipod-time">
+                                                </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <p class="ipod-time-text" style="margin-left:-15px;">
+                                                    00:00
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="row justify-content-center">
+                                    
+                                        <div class="ipod-scroll-wheel">
+                                            <div class="row justify-content-center" style="margin-top: 15px;">
+                                                    menu
+                                            </div>
+                                            <div class="row" style="margin-top: 50px;">
+                                                    <div class="col-3">
+                                                        <img src="images/back.png" />
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="center-dot"></div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <img src="images/forward.png" />
+                                                    </div>
+                                            </div>
+                                            <div class="row justify-content-center" style="margin-top: 15px;">
+                                                <div class="col-1">
+                                                    <img src="images/pause.png" style="margin-left: -15px;"/>
+                                                </div> 
+                                            </div>
+                                </div>
+                                </div>
+                                
                             </div>
                         </div>
-        
+                    </div>
                     
+                
                 </div>
         </div>
+        <div class="my-foot">
+            <div style="text-align: center;">
+                    Angela George ©2026
+            </div>
+        </footer>
     </body>
 </html>
