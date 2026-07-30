@@ -59,11 +59,32 @@ font-family: "New Rocker", Georgia, 'Times New Roman', Times, serif;
 }
 
 @media screen and (max-width: 1200px) {
+    
 
-    /* need to add a buffer for iphone island dead space */
     .banner-image {
         width: 500px;
         height: 275px;
+        left: 100px;
+    }
+
+      .banner-text {
+        z-index: 1;
+        position: absolute;
+        left: 475px;
+        margin-inline: auto; 
+        margin-top: 75px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    /* need to add a buffer for iphone island dead space */
+
+    .banner-image {
+        left: 0;
+        right: 0;
+        margin-inline: auto; /* centers image */
+
     }
 
     .banner-text {
@@ -132,6 +153,10 @@ body {
     width: 100px;
     height: 30px;
 
+    a {
+        text-decoration: none;
+        color: white;
+    }
 
 }
 
@@ -153,7 +178,7 @@ width: 325px;
 height: 550px;
 left: 45px;
 top: 759px;
-margin-top: 25px;
+margin-top: 50px;
 background: linear-gradient(187.84deg, #666666 -7.53%, #FFFFFF 37.12%, #BDBDBD 71.24%, #848484 96.82%);
 border: 1px solid #8A8A8A;
 border-radius: 28px;
@@ -190,12 +215,22 @@ padding: 25px;
     margin-top: -25px;
 }
 
-.ipod-time {
+.progress-container {
     margin-top: 25px;
     height: 20px;
     width: 150px;
+    background: linear-gradient(357.83deg, #FFFFFF 5.75%, #CECECE 34.39%, #ECECEC 68.04%, #FFFFFF 81.68%);
+    border: 0.5px solid rgba(212, 212, 212, 0.737);
+
+}
+
+.ipod-time {
     background: linear-gradient(0deg, #FFFFFF -51.17%, #A953FF -18.51%, #B188FF 32.05%, #9232CA 74.53%, #FFFFFF 103.12%);
     border: 0.5px solid rgba(204, 187, 204, 0.737255);
+    height: 100%;
+    width: 0;
+    transition: width 0.1s linear;
+
 }
 
 .podcast-cover {
@@ -227,12 +262,12 @@ padding: 25px;
 .my-gif {
     transform: skew(2deg, -2deg);
     z-index: 1;
-    margin-top: 100px;
+    margin-top: 105px;
     margin-left: 25px;
-    border: 5px solid black;
+    border: 5px solid rgb(33, 33, 36);
     object-fit: cover;
     width: 245px;
-    height: 175px;
+    height: 165px;
     border-radius: 5%;
 }
 
@@ -242,4 +277,5 @@ padding: 25px;
     background-position: center;
     width: 452px;
     height: 378px;
+    margin-bottom: 25px;
 }
