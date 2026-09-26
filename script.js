@@ -2,30 +2,43 @@
 let episodes = [];
 
 //prod RSS Feed 
-// const RSS_URL = `https://angelageorge.com/feed/podcast/voz-memos/`;
+const RSS_URL = `https://angelageorge.com/feed/podcast/voz-memos/`;
 
-//         async function readRssFeed(episodes) {
-//             try {
-//                 const response = await fetch(RSS_URL);
-//                 const str = await response.text();
-//                 const data = new window.DOMParser().parseFromString(str, "text/xml");
+async function readRssFeed(episodes) {
+            try {
+                const response = await fetch(RSS_URL);
+                const str = await response.text();
+                const data = new window.DOMParser().parseFromString(str, "text/xml");
                 
-//                 const episodes = data.querySelectorAll("item");
-//                 episodes.forEach(el => {
-//                     const title = el.querySelector("title")?.textContent;
-//                     const link = el.querySelector("link")?.textContent;
-//                     console.log(title, link);
-//                 });
-//         }   catch (error) {
-//                 console.error("CORS or network error:", error);
-//         }
-//     }
+                const episodesXML = data.querySelectorAll("item");
+                episodesXML.forEach(el => {
 
-// readRssFeed(episodes);
+                    console.log(el)
+                    let episode = {
+                        title: el.querySelector("title")?.textContent, 
+                        link: el.querySelector("link")?.textContent, 
+                        audio_link: el.querySelector("enclosure")?.getAttribute('url'), 
+                        duration: el.getElementsByTagNameNS(
+                            "http://www.itunes.com/dtds/podcast-1.0.dtd",
+                            "duration"
+                            )[0]?.textContent?.split(":")
+                                .slice(-2)
+                                .join(":")
+                        }
+                    episodes.push(episode)
+                   
+                });
+                
+        }   catch (error) {
+                console.error("CORS or network error:", error);
+        }
+}
+
+
 
 //localhost JSON read
-import data from "./episodes.JSON" with { type: "json" };
-episodes = data.items;
+// import data from "./episodes.JSON" with { type: "json" };
+// episodes = data.items;
 
 const iPod = document.querySelector('.podcast-container')
 const playBtn = document.querySelector('#play')
@@ -37,10 +50,12 @@ const progressContainer = document.querySelector('.progress-container')
 const title = document.querySelector('#title')
 const displayCurrentTime = document.querySelector('#current-time')
 const displayRemainingTime = document.querySelector('#remaining-time')
-
+const menuBtn = document.querySelector('#menu');
+const iPodScreenPlayer = document.querySelector('#player-screen');
+const iPodScreenMenu = document.querySelector('#menu-screen');
+const list = document.querySelector('#menu-list');
 let episodeIndex = 0;
 
-loadEpsiode(episodes[episodeIndex]);
 
 function formatTime(seconds){
     const mins = Math.floor(seconds / 60);
@@ -51,17 +66,19 @@ function formatTime(seconds){
 function loadEpsiode(episode) {
     title.innerText = episode.title;
     title.href = episode.link;
-    audio.src = episode.enclosure.link;
+    audio.src = episode.audio_link;
 
     //reset everything
     displayCurrentTime.innerText = `00:00`
-    const duration = formatTime(episode.enclosure.duration)
-    displayRemainingTime.innerText = `-${duration}`
+    displayRemainingTime.innerText = `-${episode.duration}`
     audio.currentTime = 0
     progress.style.width = 0
 }
 
 function playEpisode() {
+    if (iPodScreenPlayer.classList.contains('hidden')){
+        return;
+    }
     iPod.classList.add('play')
 
 
@@ -144,13 +161,43 @@ function setProgress(e) {
 
     audio.currentTime = (clickX / width) * duration
 }
-//change episode events
+
+function loadMenu() {
+    pauseEpisode()
+    
+    iPodScreenPlayer.classList.add('hidden')
+    iPodScreenMenu.classList.remove('hidden')
+
+    let id = 0;
+    episodes.forEach(episode => {
+        const div = document.createElement("div");
+        div.classList.add('menu-item')
+        div.id = (id);
+        div.textContent = episode.title;
+        div.addEventListener('click', (e) => {
+            iPodScreenPlayer.classList.remove('hidden')
+            iPodScreenMenu.classList.add('hidden')
+            episodeIndex=e.currentTarget.id
+            loadEpsiode(episodes[e.currentTarget.id])
+        })
+        list.appendChild(div);
+        id ++;
+    });
+
+}
+
+//events
 
 prevBtn.addEventListener('click', prevEpisode);
 nextBtn.addEventListener('click', nextEpisode);
+menuBtn.addEventListener('click', loadMenu);
 
 audio.addEventListener('timeupdate', updateProgess);
 
 progressContainer.addEventListener('click', setProgress);
 
 audio.addEventListener('ended', nextEpisode);
+
+//execute
+
+readRssFeed(episodes).then(() => loadEpsiode(episodes[episodeIndex]));

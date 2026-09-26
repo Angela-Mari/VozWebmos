@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Voz Memos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,7 +79,7 @@
                                 Hello Listener
                             </h1>
                             <p>
-                                Welcome to Voz Memos. A podcast informed by growing up in the 2000s and coming of age “during unprecedented times.” I share bi-weekly episodes on topics ranging from my latest creative fixation to commentary on how AI is ruining everything. 
+                                Welcome to Voz Memos. A podcast informed by growing up in the 2000s and coming of age during "unprecedented times.” I share bi-weekly episodes on topics ranging from my latest creative fixation to commentary on how AI is ruining everything. 
                             </p>
                         </div>
                     </div>
@@ -87,14 +88,13 @@
                             <div style="min-height: 550px; margin-bottom: 200px;">
                                 <div class="ipod-base col justify-content-center podcast-container">
                                     <div class="row justify-content-center">
-                                        <div class="ipod-screen">
+                                        <div class="ipod-screen" id="player-screen">
                                             <div class="row">
                                                 <div class="col">
                                                     <img src="./images/Podcast Cover.jpg" width="120px" hight="120px" class="podcast-cover" alt="Voz Memos logo on purple rainbow background with Angela looking up at camera"/>
                                                 </div> 
                                                 <div class="ipod-text col">
-                                                    <a id="title" href="">
-                                                        Epsiode Title
+                                                    <a id="title" href="" style="color:#A953FF">
                                                     </a>
                                                 </div>
                                             </div>
@@ -117,13 +117,21 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                        </div>                                    
+                                        </div>    
+                                           
+                                        <div class="ipod-screen-2 hidden menu" id="menu-screen">
+                                           <div class="menu-top">
+                                                Voz Memos Menu
+                                           </div>
+                                            <div id="menu-list">
+                                            </div>
+                                        </div>                           
                                     </div>
                                     <div class="row justify-content-center">
                                         
                                         <div class="ipod-scroll-wheel">
-                                            <div class="row justify-content-center" style="margin-top: 15px;">
-                                                    menu
+                                            <div class="row justify-content-center" id="menu" style="margin-top: 15px; padding-top:5px; margin-bottom:-5px; color:#737373">
+                                                    MENU
                                             </div>
                                             <div class="row" style="margin-top: 50px;">
                                                     <div class="col-3">

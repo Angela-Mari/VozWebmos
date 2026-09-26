@@ -135,11 +135,11 @@ font-family: "New Rocker", Georgia, 'Times New Roman', Times, serif;
 
 body {
     background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(51, 21, 99, 0.5) 5%,rgba(51, 21, 99, 0.75) 15%, #000000 35%, #000000 65%, rgba(51, 21, 99, 0.75) 85%, rgba(51, 21, 99, 0.5) 95%, rgba(0, 0, 0, 0) 100%), url("./images/angela-tile.JPG");
-    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .my-container {
-    min-height: 120vh;
+    min-height: 100vh;
 }
 
 /* Chrome Button */
@@ -197,6 +197,17 @@ padding: 25px;
 
 }
 
+.ipod-screen-2 {
+
+    width: 275px;
+    height: 200px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 0 0 0 0
+}
+
 .ipod-scroll-wheel {
     width: 200px;
   
@@ -247,6 +258,33 @@ padding: 25px;
     font-size: .8rem;
     vertical-align: bottom;
     margin-top: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+#menu-list {
+    height: 165px;
+    overflow-y: scroll;
+}
+
+.menu-item {
+ border-bottom: 1px solid grey;
+ padding-left: 5px;
+}
+
+.menu-item:hover {
+    background: linear-gradient(0deg, #FFFFFF -51.17%, #A953FF -18.51%, #B188FF 32.05%, #9232CA 74.53%, #FFFFFF 103.12%);
+    color:white;
+}
+
+.menu-top {
+    height: 25px;
+    background: linear-gradient(to bottom, #D9D9D9 21.14%, #737373 124.8%);
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
 .my-foot {
